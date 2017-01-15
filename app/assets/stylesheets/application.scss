@@ -15,12 +15,35 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.container.message{
+    padding: 0px;
+    
+    #notice {
+        background-color: $brand-info;
+        margin-bottom: 0px;
+        padding-left: 15px;
+    }
+    
+    #alert {
+        background-color: $brand-danger;
+        margin-bottom: 0px;
+        padding-left: 15px;
+        h3 {
+            margin-top: 0;
+        }
+    }
+}
+
 header {
     background-color: black;
     
     #logo {
         float: left;
-       margin-top: 16px;
+        padding: 15px;
+        margin-left: -15px;
+        &:hover {
+            background-color: $gray-lighter;
+        }
     }
     
     nav {

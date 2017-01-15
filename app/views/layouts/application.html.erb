@@ -9,25 +9,32 @@
   </head>
 
   <body>
-    <% if flash[:alert] %>
-      <h1><%= flash[:alert] %> </h1> 
-    <% end %>
+    <div class='container message'>
+      <% if notice %>
+        <div id='notice'>
+          
+          <%= notice %>
+        </div>
+      <% elsif alert %>
+        <div id='alert'>
+          <h3><%= alert %></h3>
+        </div>
+      <% end %>
+    </div>
     <header class='container'>
-      <div>
-        <%= link_to "Blocitoff", root_path, id: 'logo' %>
-        <nav>
-          <ul class='nav navbar-nav navbar-right'>
-            <li><%= link_to "Home", root_path %></li>
-            <% if current_user %>
+      <%= link_to "Blocitoff", root_path, id: 'logo' %>
+      <nav>
+        <ul class='nav navbar-nav navbar-right'>
+          <li><%= link_to "Home", root_path %></li>
+          <% if current_user %>
             <li><%= link_to "Edit User Info", edit_user_registration_path %></li>
             <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-            <% else %>
+          <% else %>
             <li><%= link_to "Sign Up", new_user_registration_path %></li>
             <li><%= link_to "Login", new_user_session_path %></li>
-            <% end %>
-          </ul>
-        </nav>
-      </div>
+          <% end %>
+        </ul>
+      </nav>
     </header>
     <div class='container'>
       <%= yield %>
