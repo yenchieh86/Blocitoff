@@ -1,5 +1,7 @@
 <div class='users_page'>
-    <h3><%= @user.email %></h3>
     <%= gravatar_image_tag( @user.email.gsub('spam', 'mdeering'), :alt =>  @user.email, class: 'user_show_gravatar' ) %>
+    <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+    <h3><%= @user.email %></h3>
+    
     <p><%= @user.created_at %></p>
 </div>
