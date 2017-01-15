@@ -60,4 +60,10 @@ header {
 
 .users_page {
     text-align: center;
+    
+    .user_show_gravatar {
+        margin: 10px 0px;
+        width: 20%;
+        height: 20%;
+    }
 }
