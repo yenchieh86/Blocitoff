@@ -18,6 +18,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'gravatar_image_tag'
+gem 'bootstrap_form'
 
 group :development, :test do
   gem 'byebug', platform: :mri
