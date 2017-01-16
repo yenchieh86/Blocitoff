@@ -1,0 +1,11 @@
+<div class='row'>
+    <h3>Item list</h3>
+    <div class='col-md-8 item_list_area'>
+        <% @items.each do |item| %>
+            <%= item.id %>
+            <%= item.name %>
+            </br>
+        <% end %>
+    </div>
+    <%= link_to "Create New Item", new_user_item_path(current_user), class: 'btn btn-primary' %>
+</div>

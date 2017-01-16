@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   
   resources :users, only: [] do
-    resources :items, only: [:create]
+    resources :items, only: [:new, :create]
   end
   
-  get 'users/show'
+  authenticated :user do
+    root 'items#index', as: :authenticated_root
+  end
 
   root 'welcome#index'
 

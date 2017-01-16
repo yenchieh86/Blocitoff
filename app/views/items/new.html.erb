@@ -1,0 +1,4 @@
+<%= bootstrap_form_for [current_user, @item] do |f| %>
+    <%= f.text_field :name %>
+    <%= f.submit "Create" %>
+<% end %>
