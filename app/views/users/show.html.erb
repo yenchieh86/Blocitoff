@@ -1,5 +1,5 @@
 <div class='users_page'>
-    <%= gravatar_image_tag( @user.email, :alt =>  @user.email, class: 'user_show_gravatar', gravatar: { secure: true } ) %>
+    <%= gravatar_image_tag( @user.email, alt: @user.email, class: 'user_show_gravatar', gravatar: { secure: true } ) %>
     <h2><%= @user.first_name %> <%= @user.last_name %></h2>
     <h4><%= @user.email %></h4>
     <h4>Create at: <%= @user.created_at.strftime("%m/%d/%Y") %></h4>
