@@ -1,17 +1,9 @@
 <div class='users_page'>
-    <%= gravatar_image_tag( @user.email.gsub('spam', 'mdeering'), :alt =>  @user.email, class: 'user_show_gravatar' ) %>
+    <%= gravatar_image_tag( @user.email, :alt =>  @user.email, class: 'user_show_gravatar', gravatar: { secure: true } ) %>
     <h2><%= @user.first_name %> <%= @user.last_name %></h2>
     <h4><%= @user.email %></h4>
     <h4>Create at: <%= @user.created_at.strftime("%m/%d/%Y") %></h4>
     <h4>Update at: <%= @user.updated_at.strftime("%m/%d/%Y") %></h4>
     
-    <div class='item_area'>
-        <h2>Create Items</h2>
-        <div class='create_item_area'>
-            <%= render "items/form" %>
-        </div>
-        <div class='item_list_area'>
-            <%= render @user.items %>
-        </div>
-    </div>
+    
 </div>

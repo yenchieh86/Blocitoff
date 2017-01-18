@@ -52,21 +52,26 @@ header {
     }
 }
 
-.welcome_page {
+.body_content {
     text-align: center;
+}
+
+.welcome_page {
     .welcome_nev {
         margin-top: 20px;
     }
 }
 
-.users_page {
-    text-align: center;
+.application_user_gravatar {
+    width: 18px;
+    height: 18px;
     
-    .user_show_gravatar {
-        margin: 10px 0px;
-        width: 20%;
-        height: 20%;
-    }
+}
+
+.user_show_gravatar {
+    margin: 10px 0px;
+    width: 20%;
+    height: 20%;
 }
 
 .item_area {
