@@ -2,8 +2,11 @@
     <h3>Item list</h3>
     <div class='col-md-8'>
         <% @items.each do |item| %>
-            <%= item.name %>
-            </br>
+            <div class='item' data-no-turbolink>
+                <%= item.name %>
+                <%= link_to "Complete", item, method: :delete, remote: true, class: 'glyphicon glyphicon-ok complete' %>
+                </br>
+            </div>
         <% end %>
     </div>
     <%= link_to "Create New Item", new_item_path, class: 'btn btn-primary' %>

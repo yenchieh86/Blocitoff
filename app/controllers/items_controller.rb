@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
     def index
-       @items = current_user.items 
+       @items = current_user.items
     end
     
     def new
@@ -10,11 +10,22 @@ class ItemsController < ApplicationController
     def create
         @item = current_user.items.new(item_params)
         if @item.save
-            flash[:notice] = 'Your item is saved.'
+            flash.now[:notice] = 'Your item is saved.'
             redirect_to root_path
         else
-            flash[:alert] = "There's a error, please try again."
+            flash.now[:alert] = "There's a error, please try again."
             render 'new'
+        end
+        
+    end
+    
+    def destroy
+       @item =  Item.find(params[:id])
+       @item.destroy
+       
+        respond_to do |format|
+                format.html 
+                format.js   
         end
     end
     
