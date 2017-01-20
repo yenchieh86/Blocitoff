@@ -10,10 +10,10 @@ class ItemsController < ApplicationController
     def create
         @item = current_user.items.new(item_params)
         if @item.save
-            flash.now[:notice] = 'Your item is saved.'
+            flash[:notice] = 'Your item is saved.'
             redirect_to root_path
         else
-            flash.now[:alert] = "There's a error, please try again."
+            flash[:alert] = "There's a error, please try again."
             render 'new'
         end
         
@@ -22,11 +22,11 @@ class ItemsController < ApplicationController
     def destroy
        @item =  Item.find(params[:id])
        @item.destroy
+       respond_to do |format|
+           format.html { redirect_to root_path }
+           format.js
+       end
        
-        respond_to do |format|
-                format.html 
-                format.js   
-        end
     end
     
     private

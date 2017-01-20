@@ -1,13 +1,13 @@
-<div class='row'>
+<div class='row item_list'>
     <h3>Item list</h3>
     <div class='col-md-8'>
         <% @items.each do |item| %>
-            <div class='item' data-no-turbolink>
+            <div class='item-<%= item.id %>'>
                 <%= item.name %>
                 <%= link_to "Complete", item, method: :delete, remote: true, class: 'glyphicon glyphicon-ok complete' %>
                 </br>
             </div>
         <% end %>
     </div>
-    <%= link_to "Create New Item", new_item_path, class: 'btn btn-primary' %>
+    <%= link_to "Create New Item", new_item_path, remote: true, class: 'btn btn-primary create_new_item' %>
 </div>
