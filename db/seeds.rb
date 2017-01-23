@@ -6,7 +6,6 @@ User.create(
     confirmed_at: Time.now
 )
 
-
 u = User.first
 
 50.times do
