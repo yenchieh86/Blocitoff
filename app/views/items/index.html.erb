@@ -3,14 +3,12 @@
     <%= link_to "Create New Item", new_item_path, remote: true, class: 'btn btn-primary create_new_item' %>
     <div class='col-md-12'>
         <% @items.each do |item| %>
-            <% if (item.updated_at + 7.days) - Time.now > 0 %>
-                <div class='item-<%= item.id %>'>
-                    <%= item.id %>
-                    <%= item.name %>
-                    <%= link_to "Complete", item, method: :delete, remote: true, class: 'glyphicon glyphicon-ok complete' %>
-                    <p>Time left before auto delete in: <%= distance_of_time_in_words(item.updated_at + 7.days, Time.now) %></p>
-                </div>
-            <% end %>
+            <div class='item-<%= item.id %>'>
+                <%= item.id %>
+                <%= item.name %>
+                <%= link_to "Complete", item, method: :delete, remote: true, class: 'glyphicon glyphicon-ok complete' %>
+                <p>Time left before auto delete in: <%= distance_of_time_in_words(item.updated_at + 7.days, Time.now) %></p>
+            </div>
         <% end %>
     </div>
 </div>
