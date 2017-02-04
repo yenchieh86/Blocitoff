@@ -18,6 +18,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'gravatar_image_tag'
 gem 'bootstrap_form'
 gem 'faker'
+gem "figaro"
+gem 'sendgrid-ruby'
 
 group :development, :test do
   gem 'byebug', platform: :mri
