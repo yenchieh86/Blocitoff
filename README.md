@@ -6,4 +6,3 @@ Users can create an account in which they add tasks and delete them when complet
 ## Technology Focus:
 Ruby on Rails, Devise authentication
 
-Visit the Heroku app: [Blocitoff](https://yen-blocitoff.herokuapp.com/)
